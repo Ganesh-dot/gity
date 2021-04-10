@@ -6,10 +6,9 @@
   font-family: "Poopins", sans-serif;
 }
 form {
-  width: 70%;
   border-radius: 5px;
-  margin: 62px auto 0 auto;
-  padding: 10px;
+  margin: 50px 30px auto 20px;
+  padding: 20px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 form .user-details {

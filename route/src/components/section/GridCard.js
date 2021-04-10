@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./GridCard.css";
 
-const GridCard = () => {
+export const GridCard = () => {
   const [users, setUsers] = useState([]);
   const getUsers = async () => {
     const response = await fetch("htts://jsonplaceholder.typecode.com/users");
@@ -58,5 +58,3 @@ const GridCard = () => {
     </>
   );
 };
-
-export default GridCard;

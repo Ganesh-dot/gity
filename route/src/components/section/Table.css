@@ -9,8 +9,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 table {
+  width: auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   border-radius: 4px;
-  margin-top: 50px;
+  margin: 50px 20px 0 20px;
 }
 table thead {
   text-align: left;
