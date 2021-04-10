@@ -6,19 +6,19 @@
   font-family: "Poopins", sans-serif;
 }
 form {
-  width: 70%;
   border-radius: 5px;
-  margin: 62px auto 0 auto;
-  padding: 10px;
+  margin: 62px 40px 0 40px;
+  padding: 20px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 form .user-details {
+  margin-left: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 form .user-details .input-box {
-  margin: 15px 0 0 0;
+  margin: 20px 0 0 0;
   width: calc(90% / 2 - 20px);
 }
 .user-details .input-box .details {
@@ -29,7 +29,7 @@ form .user-details .input-box {
 }
 .user-details .input-box input {
   height: 45px;
-  width: 80%;
+  width: 90%;
   outline: none;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -43,16 +43,16 @@ form .user-details .input-box {
   border-color: #9b59b6;
 }
 form .gender-details {
-  margin-top: 20px;
+  margin: 20px 0 0 70px;
 }
 form .gender-details .gender-title {
   font-size: 20px;
-  margin: 14px 0 0 70px;
+  margin: 14px 0 0 55px;
   font-weight: 500;
 }
 form .gender-details .category {
   display: flex;
-  width: 40%;
+  width: 80%;
   margin: 14px 0 0 70px;
   justify-content: space-between;
 }
@@ -80,7 +80,8 @@ form input[type="radio"] {
 }
 form .button {
   height: 45px;
-  margin: 40px 0px 20px 100px;
+  text-align: center;
+  margin: 30px 0px 30px 0px;
 }
 form .button input {
   height: 100%;
