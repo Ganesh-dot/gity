@@ -12,7 +12,7 @@ class Section extends Component {
         <Route path="/" Component={Home} />
         <Route path="/table" Component={Table} />
         <Route path="/gridcard" Component={GridCard} />
-        <Route path="/login" Component={LogIn} />
+        <Route path="/login & Register" Component={LogIn} />
       </section>
     );
   }
