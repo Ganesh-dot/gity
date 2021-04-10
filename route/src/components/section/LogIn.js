@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./LogIn.css";
 
-class LogIn extends Component {
+export class LogIn extends Component {
   render() {
     return (
       <form>
@@ -58,5 +58,3 @@ class LogIn extends Component {
     );
   }
 }
-
-export default LogIn;

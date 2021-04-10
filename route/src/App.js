@@ -1,19 +1,28 @@
-import React from "react";
-import Header from "./components/Header";
-import Section from "./components/Section";
-import LogIn from "./components/section/LogIn";
-import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Home } from "./components/section/Home";
+import { Table } from "./components/section/Table";
+import { LogIn } from "./components/section/LogIn";
+import { GridCard } from "./components/section/GridCard";
 
-class App extends React.Component {
-  render() {
-    return (
+function App() {
+  return (
+    <>
       <Router>
-        <Header />
-        <Section />
-        <LogIn />
+        <Navbar />
+
+        <div className="pages">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/Table" component={Table} />
+            <Route path="/LogIn" component={LogIn} />
+            <Route path="/GridCard" component={GridCard} />
+          </Switch>
+        </div>
       </Router>
-    );
-  }
+    </>
+  );
 }
 
 export default App;
