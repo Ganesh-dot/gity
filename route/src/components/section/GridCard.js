@@ -22,6 +22,7 @@ const GridCard = () => {
                   <div className="d-flex align-items-center">
                     <div className="image">
                       <img
+                        alt="User Img"
                         src={curElem.thumbnailUrl}
                         className="rounded"
                         width="155"
