@@ -61,7 +61,6 @@ header .close {
   border-radius: 5px;
 }
 section {
-  min-height: 100vh;
   background: lightskyblue;
   display: flex;
   justify-content: center;
@@ -95,7 +94,7 @@ section h2 {
     align-items: center;
     flex-direction: column;
     z-index: 99;
-    transition: 0.5 linear;
+    transition: 0.5 ease;
   }
   header ul.toggle {
     left: 0;
