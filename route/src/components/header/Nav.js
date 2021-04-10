@@ -1,39 +1,24 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 
 export class Nav extends Component {
-  state = {
-    toggle: false,
-  };
-  menuToggle = () => {
-    this.setState({
-      toggle: !this.state.toggle,
-    });
-  };
   render() {
-    const { toggle } = this.state;
     return (
       <>
-        <ul className={toggle ? "toggle" : ""}>
+        <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <NavLink to="/Table">Table</NavLink>
+            <Link to="/Table">Table</Link>
           </li>
           <li>
-            <NavLink to="/GridCard">Grid Card</NavLink>
+            <Link to="/GridCard">Grid Card</Link>
           </li>
           <li>
-            <NavLink to="/LogIn">Log In / Register</NavLink>
-          </li>
-          <li className="close" onClick={this.menuToggle}>
-            X
+            <Link to="/LogIn">Log In / Register</Link>
           </li>
         </ul>
-        <div className="menu" onClick={this.menuToggle}>
-          Menu
-        </div>
       </>
     );
   }

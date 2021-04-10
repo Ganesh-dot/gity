@@ -3,16 +3,18 @@ import Home from "./section/Home";
 import Table from "./section/Table";
 import GridCard from "./section/GridCard";
 import LogIn from "./section/LogIn";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 class Section extends Component {
   render() {
     return (
       <section>
-        <Route path="/" Component={Home} />
-        <Route path="/table" Component={Table} />
-        <Route path="/gridcard" Component={GridCard} />
-        <Route path="/login & Register" Component={LogIn} />
+        <Switch>
+          <Route exact path="/" Component={Home} />
+          <Route path="/Table" Component={Table} />
+          <Route path="/GridCard" Component={GridCard} />
+          <Route path="/LogIn" Component={LogIn} />
+        </Switch>
       </section>
     );
   }

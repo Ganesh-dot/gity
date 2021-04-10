@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Section from "./components/Section";
-import Table from "./components/section/Table";
+import LogIn from "./components/section/LogIn";
 import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
@@ -9,8 +9,8 @@ class App extends React.Component {
     return (
       <Router>
         <Header />
-        <Table />
         <Section />
+        <LogIn />
       </Router>
     );
   }
