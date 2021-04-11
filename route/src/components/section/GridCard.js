@@ -1,60 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./GridCard.css";
+import axios from "axios";
 
 export const GridCard = () => {
-  const [users, setUsers] = useState([]);
-  const getUsers = async () => {
-    const response = await fetch("htts://jsonplaceholder.typecode.com/users");
-    setUsers(await response.json());
+  const [profileName, setProfileName] = useState("");
+  const [profileCell, setProfileCell] = useState("");
+  const [profileImage, setProfileImage] = useState("");
+  const [profileEmail, setProfileEmail] = useState("");
+
+  const profileData = async () => {
+    try {
+      const res = await axios.get("https://randomuser.me/api/");
+      setProfileCell(res.data.results[0].cell);
+      setProfileEmail(res.data.results[0].email);
+      setProfileImage(res.data.results[0].picture.large);
+      setProfileName(
+        `${res.data.results[0].name.first} ${res.data.results[0].name.last}`
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   useEffect(() => {
-    getUsers();
+    profileData();
   }, []);
+
   return (
-    <>
-      <h2>List of Users</h2>
-      <div className="container-fluid mt-5">
-        <div className="row text-center">
-          {users.map((curElem) => {
-            return (
-              <div className="col-10 col-md mt-5">
-                <div className="card p-2">
-                  <div className="d-flex align-items-center">
-                    <div className="image">
-                      <img
-                        alt="User Img"
-                        src={curElem.thumbnailUrl}
-                        className="rounded"
-                        width="155"
-                      ></img>
-                    </div>
-                    <div className="ml-3 w-100">
-                      <h4 className="mb-0 mt-0 textleft">
-                        {curElem.login}
-                        <span className="textleft">{curElem.title}</span>
-                      </h4>
-                      <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                        <div className="d-flex flex-collumn">
-                          <span className="articles">Articles</span>
-                          <span className="number1">38</span>
-                        </div>
-                        <div className="d-flex flex-collumn">
-                          <span className="articles">Followers</span>
-                          <span className="number1">980</span>
-                        </div>
-                        <div className="d-flex flex-collumn">
-                          <span className="articles">Rating</span>
-                          <span className="number1">8.9</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    <div>
+      <button onClick={() => profileData()}>New Person</button>
+      <div className="card">
+        <img src={profileImage} style={{ width: "100%" }} />
+        <h1>{profileName}</h1>
+        <p className="title">{profileEmail}</p>
+        <p>{profileCell}</p>
+        <p>
+          <button>Contact</button>
+        </p>
       </div>
-    </>
+    </div>
   );
 };
